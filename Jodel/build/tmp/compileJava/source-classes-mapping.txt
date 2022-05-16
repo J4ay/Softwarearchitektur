@@ -16,5 +16,9 @@ de/hse/swa/jodel/jaxrs/resources/Step4UserResource.java
  de.hse.swa.jodel.jaxrs.resources.Step4UserResource
 de/hse/swa/jodel/orm/dao/PostDao.java
  de.hse.swa.jodel.orm.dao.PostDao
+de/hse/swa/jodel/orm/model/Customer.java
+ de.hse.swa.jodel.orm.model.Customer
+de/hse/swa/jodel/orm/dao/CustomerDao.java
+ de.hse.swa.jodel.orm.dao.CustomerDao
 de/hse/swa/jodel/orm/model/Comment.java
  de.hse.swa.jodel.orm.model.Comment
