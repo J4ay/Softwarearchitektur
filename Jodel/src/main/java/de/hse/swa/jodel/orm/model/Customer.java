@@ -21,11 +21,6 @@ import javax.persistence.Table;
 
 // import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-/**
- * The persistent class for the TUSER database table.
- * 
- */
 @Entity
 @Table(name = "Customers")
 public class Customer implements Serializable {
@@ -33,8 +28,8 @@ public class Customer implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
     @Id
-    @SequenceGenerator(name = "customerSeq", sequenceName = "ZSEQ_CUSTOMERS_ID", allocationSize = 1, initialValue = 10)
-    @GeneratedValue(generator = "customerSeq")
+    @SequenceGenerator(name = "customersSeq", sequenceName = "ZSEQ_CUSTOMERS_ID", allocationSize = 1, initialValue = 10)
+    @GeneratedValue(generator = "customersSeq")
     
     @Column(name = "custID")
     private Long custID;
@@ -64,34 +59,27 @@ public class Customer implements Serializable {
 	public Long getCustID() {
 		return this.custID;
 	}
-
 	public void setCustID(Long id) {
 		this.custID = id;
 	}
 
-
 	public String getName() {
 		return this.name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
 	public String getDepartment() {
 		return this.department;
 	}
-
 	public void setDepartment(String department) {
 		this.department = department;
 	}
 	
-
 	public String getAddress() {
 		return this.department;
 	}
-
 	public void setAddress(String department) {
 		this.department = department;
 	}

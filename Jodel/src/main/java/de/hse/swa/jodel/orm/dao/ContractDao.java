@@ -20,52 +20,52 @@ import javax.transaction.Transactional;
 
 import org.jboss.logging.Logger;
 
-import de.hse.swa.jodel.orm.model.Customer;
+import de.hse.swa.jodel.orm.model.Contract;
 
 @ApplicationScoped
-public class CustomerDao {
+public class ContractDao {
 
     @Inject
     EntityManager em;
 
-	private static final Logger LOGGER = Logger.getLogger(CustomerDao.class);
+	private static final Logger LOGGER = Logger.getLogger(ContractDao.class);
 	
-	public Customer getCustomer(Long id) {
-		return em.find(Customer.class, id);
+	public Contract getContract(Long id) {
+		return em.find(Contract.class, id);
 	}
 	
 
-	public List<Customer> getCustomers() {
-		Query q = em.createQuery("select c from Customers c");
-		List<Customer> customers = q.getResultList();
-		return customers;
+	public List<Contract> getContracts() {
+		Query q = em.createQuery("select c from Contracts c");
+		List<Contract> contracts = q.getResultList();
+		return contracts;
 	}
 
     @Transactional
-    public Customer addCustomer(Customer customer) {
-    	if (customer.getCustID() != null) {
-    		customer = em.merge(customer);
+    public Contract addContract(Contract contract) {
+    	if (contract.getContID() != null) {
+    		contract = em.merge(contract);
     	} else {
-        	em.persist(customer);
+        	em.persist(contract);
     	}
-    	return customer;
+    	return contract;
     }
 	
 
 	@Transactional
-	public void deleteCustomer(Long id) {
+	public void deleteContract(Long id) {
 
-		Customer cm = em.find(Customer.class, id);
+		Contract cm = em.find(Contract.class, id);
 		if (cm != null) {
 			em.remove(cm);
 		}
 	}
 	
     @Transactional
-    public void deleteAllCustomers() {
+    public void deleteAllContracts() {
     	try {
 
-    	    Query del = em.createQuery("DELETE * FROM Customers");
+    	    Query del = em.createQuery("DELETE * FROM Contracts");
     	    del.executeUpdate();
 
     	} catch (SecurityException | IllegalStateException  e) {

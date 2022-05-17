@@ -21,11 +21,6 @@ import javax.persistence.Table;
 
 // import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-/**
- * The persistent class for the TUSER database table.
- * 
- */
 @Entity
 @Table(name = "User")
 public class User implements Serializable {
@@ -52,6 +47,10 @@ public class User implements Serializable {
 	private String userLoginName;
 
 	@Basic(optional = false)
+	@Column(name = "userPassword",length = 50)
+	private String userPassword;
+
+	@Basic(optional = false)
 	@Column(name = "userMail",length = 50)
 	private String userMail;
 
@@ -70,10 +69,11 @@ public class User implements Serializable {
 	public User() {
 	}
 
-	public User(String name, String lastName, String loginName, String mail, String phoneNumber1, boolean isAdmin) {
+	public User(String name, String lastName, String loginName, String password, String mail, String phoneNumber1, boolean isAdmin) {
 		this.userFirstName = name;
 		this.userLastName = lastName;
 		this.userLoginName = loginName;
+		this.userPassword = password;
 		this.userMail = mail;
 		this.userPhoneNumber1 = phoneNumber1;
 		this.isAdmin = isAdmin;
@@ -83,7 +83,6 @@ public class User implements Serializable {
 	public Long getId() {
 		return this.id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -91,7 +90,6 @@ public class User implements Serializable {
 	public String getFirstName() {
 		return this.userFirstName;
 	}
-
 	public void setFirstname(String name) {
 		this.userFirstName = name;
 	}
@@ -99,7 +97,6 @@ public class User implements Serializable {
 	public String getLastName() {
 		return this.userLastName;
 	}
-
 	public void setLastName(String lastName) {
 		this.userLastName = lastName;
 	}
@@ -107,15 +104,20 @@ public class User implements Serializable {
 	public String getLoginName() {
 		return this.userLoginName;
 	}
-
 	public void setLoginName(String loginName) {
 		this.userLoginName = loginName;
+	}
+
+	public String getPassword() {
+		return this.userPassword;
+	}
+	public void setPassword(String password) {
+		this.userPassword = password;
 	}
 
 	public String getMail() {
 		return this.userMail;
 	}
-
 	public void setMail(String mail) {
 		this.userMail = mail;
 	}
@@ -123,7 +125,6 @@ public class User implements Serializable {
 	public String getPhoneNumber1() {
 		return this.userPhoneNumber1;
 	}
-
 	public void setPhoneNumber1(String phoneNumber1) {
 		this.userPhoneNumber1 = phoneNumber1;
 	}
@@ -131,7 +132,6 @@ public class User implements Serializable {
 	public String getPhoneNumber2() {
 		return this.userPhoneNumber2;
 	}
-
 	public void setPhoneNumber2(String phoneNumber2) {
 		this.userPhoneNumber2 = phoneNumber2;
 	}
@@ -139,7 +139,6 @@ public class User implements Serializable {
 	public boolean isAdmin() {
 		return this.isAdmin;
 	}
-
 	public void setAdmin(boolean isAdmin) {
 		this.isAdmin = isAdmin;
 	}

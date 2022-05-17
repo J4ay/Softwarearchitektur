@@ -165,17 +165,17 @@ public class Contract implements Serializable {
 		this.contractNumFeature3 = contractNumFeature3;
 	}
 
-	public String getContractUser1() {
+	public User getContractUser1() {
 		return this.contractUser1;
 	}
-	public void setContractUser1(String contractUser1) {
+	public void setContractUser1(User contractUser1) {
 		this.contractUser1 = contractUser1;
 	}
 
-	public String getContractUser2() {
+	public User getContractUser2() {
 		return this.contractUser2;
 	}
-	public void setContractUser2(String contractUser2) {
+	public void setContractUser2(User contractUser2) {
 		this.contractUser2 = contractUser2;
 	}
 

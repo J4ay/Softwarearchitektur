@@ -75,7 +75,7 @@ public class Step4UserResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public User login (User user) {
-        return userDao.login(user.getUsername(), user.getPassword());
+        return userDao.login(user.getLoginName(), user.getPassword());
     }
     
     

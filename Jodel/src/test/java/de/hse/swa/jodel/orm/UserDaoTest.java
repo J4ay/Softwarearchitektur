@@ -22,7 +22,7 @@ class UserDaoTest {
     
 	private User createUser(String prefix) {
 		User user = new User();
-		user.setUsername(prefix+"UserName");
+		user.setLoginName(prefix+"UserName");
 		user.setPassword("xyz");
 		return user;
 	}
@@ -37,7 +37,7 @@ class UserDaoTest {
 	
 	private void printUser(User user) {
 		System.out.println("id: " + user.getId());
-		System.out.println("Username: " + user.getUsername());
+		System.out.println("Username: " + user.getLoginName());
 //		List<Project> projects = person.getProjects();
 //		for (Project project: projects) {
 //			System.out.println("  Project " + project.getId() + ": " + project.getProjectname());
@@ -71,7 +71,7 @@ class UserDaoTest {
 		User firstPerson = createUser("first");
 		userDao.save(firstPerson);
 		List<User> persons = userDao.getUsers();
-		assertNotNull(userDao.login(persons.get(0).getUsername(), persons.get(0).getPassword()));
+		assertNotNull(userDao.login(persons.get(0).getLoginName(), persons.get(0).getPassword()));
 	}
 	
 }
