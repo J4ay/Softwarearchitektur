@@ -2,7 +2,7 @@
  *                                                                        *
  * This software is governed by the GPL version 2.                        *
  *                                                                        *
- * Copyright: Joerg Friedrich, University of Applied Sciences Esslingen   *
+ * Copyright: Jay Imort, Kyle Mezger University of Applied Sciences Esslingen *
  *                                                                        *
  * $Id:$
  *                                                                        *

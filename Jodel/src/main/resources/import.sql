@@ -1,5 +1,22 @@
--- Some initial data
-INSERT INTO TUSER (id, username, password) 
-       VALUES ("1", "Ausername", "Apassword");
-INSERT INTO TUSER (id, username, password)
-       VALUES ("2", "Busername", "Bpassword");
+INSERT INTO `swa`.`customers`
+(`custID`,
+`address`,
+`department`,
+`name`)
+VALUES
+(1,
+"Esslingen am Neckar, Main Street 12",
+"Sales",
+"IT Designers");
+
+INSERT INTO `swa`.`customers`
+(`custID`,
+`address`,
+`department`,
+`name`)
+VALUES
+(2,
+"Stuttgart, Back Street 5",
+"Logistik",
+"LogiComp");
+
