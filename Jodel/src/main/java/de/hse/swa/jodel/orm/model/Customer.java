@@ -33,8 +33,8 @@ public class Customer implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
     @Id
-    @SequenceGenerator(name = "tuserSeq", sequenceName = "ZSEQ_TUSER_ID", allocationSize = 1, initialValue = 10)
-    @GeneratedValue(generator = "tuserSeq")
+    @SequenceGenerator(name = "customerSeq", sequenceName = "ZSEQ_CUSTOMERS_ID", allocationSize = 1, initialValue = 10)
+    @GeneratedValue(generator = "customerSeq")
     
     @Column(name = "custID")
     private Long custID;
