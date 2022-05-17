@@ -43,19 +43,21 @@ public class Customer implements Serializable {
     @Column(name = "name", length=64, unique = true)
     private String name;
     
-    @Basic(optional=true)
+    @Basic(optional=false)
     @Column(name = "department", length=64)
     private String department;
 
-	@Basic(optional=true)
+	@Basic(optional=false)
     @Column(name = "address", length=64)
     private String address;
 
 	public Customer() {
 	}
 
-	public Customer(String name) {
+	public Customer(String name, String department, String address) {
 		this.name = name;
+		this.department = department;
+		this.address = address;
 	}
 
 	
@@ -94,5 +96,9 @@ public class Customer implements Serializable {
 		this.department = department;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Customer [custID=" + custID + ", name=" + name + ", department=" + department + ", address="
+				+ address + "]";
+	}
 }
